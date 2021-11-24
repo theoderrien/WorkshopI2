@@ -1,0 +1,16 @@
+[
+	{
+		"table": "personne",
+		"Colonnes": [
+			{ "Nom": "nom" },
+			{ "Nom": "prenom" }
+		]
+	},
+	{
+		"table": "voiture",
+		"Colonnes": [
+			{ "Nom": "marque" },
+			{ "Nom": "modele" }
+		]
+	}
+]

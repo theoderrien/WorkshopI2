@@ -56,6 +56,9 @@
     <Reference Include="MySql.Data, Version=8.0.27.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.27\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -103,10 +106,12 @@
     </ApplicationDefinition>
     <Compile Include="BDD_connexion.cs" />
     <Compile Include="Command\RelayCommand.cs" />
+    <Compile Include="SDK\HelperConfig.cs" />
     <Compile Include="Models\PersonneModel.cs" />
     <Compile Include="Models\VoitureModel.cs" />
+    <Compile Include="SDK\HelperDb.cs" />
     <Compile Include="ViewModels\ChiffrementViewModel.cs" />
-    <Compile Include="HelperHash.cs" />
+    <Compile Include="SDK\HelperHash.cs" />
     <Compile Include="Queries\PersonneDAL.cs" />
     <Compile Include="Queries\VoitureDAL.cs" />
     <Page Include="MainWindow.xaml">
@@ -140,6 +145,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="JSON\Configuration.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

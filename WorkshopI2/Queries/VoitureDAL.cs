@@ -13,7 +13,6 @@ namespace ProjetWorkshop.Queries
         //Requête SQL pour sélectionner toutes les voitures dans la base de données.
         public static void SelectAllVoiture(ObservableCollection<VoitureModel> ObsColVoiture)
         {
-            connection.Close();
             connection.Open();
             string query = "SELECT voiture.id,voiture.marque,voiture.modele,voiture.couleur FROM voiture Group BY voiture.id";
             MySqlCommand cmd = new MySqlCommand(query, connection);

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Data;
 using MySql.Data.MySqlClient;
 using WorkshopI2.Models;
+using WorkshopI2.SDK;
 
 namespace ProjetWorkshop.Queries
 {
@@ -25,6 +27,13 @@ namespace ProjetWorkshop.Queries
             }
             reader.Close();
             connection.Close();
+        }
+
+        public static DataTable SelectAllPersonne()
+        {
+            string requete = "SELECT personne.id , personne.nom FROM personne Group BY personne.id;";
+
+            return HelperDb.GetDatatable(connection, requete);
         }
 
         //Requête SQL pour mettre à jour une personne dans la base de données.

@@ -1,6 +1,8 @@
-﻿using System.Windows;
+﻿using ProjetWorkshop.Queries;
+using System.Windows;
 using System.Windows.Input;
 using WorkshopI2.Command;
+using WorkshopI2.SDK;
 
 namespace WorkshopI2
 {
@@ -27,6 +29,8 @@ namespace WorkshopI2
         {
             //HelperHash.AleatoireChiffrement();
             //VolDAL.InsertVol(NewAeroportDepart, NewAeroportArrivee, NewAvion, NewDepartTheorique, NewDepartReel, NewArriveeTheorique, NewArriveeReelle, NewPrixEco, NewPrixBusiness, NewPrixPremium);
+
+            DataTable resultat = PersonneDAL.SelectAllPersonne();
 
             MessageBox.Show("*chiffrement*");
         }

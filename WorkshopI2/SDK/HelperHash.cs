@@ -37,13 +37,13 @@ namespace WorkshopI2
                 switch (chiffrement)
                 {
                     case "AES":
-                        output = HelperHash.CryptAES(output);
+                        output = CryptAES(output);
                         break;
                     case "MD5":
-                        output = HelperHash.CryptMD5(output);
+                        output = CryptMD5(output);
                         break;
                     case "DES":
-                        output = HelperHash.CryptDES(output);
+                        output = CryptDES(output);
                         break;
                 }
             }
@@ -60,13 +60,13 @@ namespace WorkshopI2
                 switch (chiffrements[i])
                 {
                     case "AES":
-                        output = HelperHash.DecryptAES(output);
+                        output = DecryptAES(output);
                         break;
                     case "MD5":
-                        output = HelperHash.DeCryptMD5(output);
+                        output = DeCryptMD5(output);
                         break;
                     case "DES":
-                        output = HelperHash.DeCryptDES(output);
+                        output = DeCryptDES(output);
                         break;
                 }
             }

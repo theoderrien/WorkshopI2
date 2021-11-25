@@ -15,23 +15,6 @@ namespace ProjetWorkshop
         public HelperConfig()
         {
             ChargerDictionnaireTable();
-            foreach(KeyValuePair<string, List<string>> table in DicoTable)
-            {
-                
-
-                StringBuilder sb = new StringBuilder();
-                sb.Append("UPDATE ");
-                sb.Append(table.Key);
-                sb.Append(" SET ");
-                foreach (string colonne in table.Value)
-                {
-                    sb.Append($" {colonne} = @aeDep , ");
-                }
-                sb.Remove(sb.Length - 1, 1);
-                sb.Append(" WHERE id = @id");
-
-                string test = sb.ToString();
-            }
 
         }
 
@@ -67,5 +50,33 @@ namespace ProjetWorkshop
             { throw new Exception($"Erreur lors de la lecture du fichier de configuration avec l'erreur suivant : '{exc.Message}'"); }
             
         }
+
+        public string RequeteAutoGenere(string nom)
+        {
+            foreach (KeyValuePair<string, List<string>> table in DicoTable)
+            {
+
+                if(table.Key.Equals(nom))
+                {
+                    int i = 0;
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append("UPDATE ");
+                    sb.Append(table.Key);
+                    sb.Append(" SET ");
+                    foreach (string colonne in table.Value)
+                    {
+                        sb.Append($" {colonne} = '{{{i++}}}' ,");
+                    }
+                    sb.Remove(sb.Length - 1, 1);
+                    sb.Append($" WHERE id = {{{i++}}}");
+
+                    return sb.ToString();
+                }
+                
+            }
+
+            return "";
+        }
+
     }
 }

@@ -23,6 +23,7 @@ namespace WorkshopI2
 		public MainWindow()
 		{
 			InitializeComponent();
+			Globals.chiffrements = HelperHash.AleatoireChiffrement();
 		}
 
 		private void BtnChiffrer_Click(object sender, RoutedEventArgs e)

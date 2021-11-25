@@ -24,6 +24,7 @@ namespace WorkshopI2.SDK
 
             MySqlDataAdapter adapter = new MySqlDataAdapter(commande);
             adapter.Fill(table);
+            dsn.Close();
 
             return table;
         }

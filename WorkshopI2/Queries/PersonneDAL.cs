@@ -15,7 +15,6 @@ namespace ProjetWorkshop.Queries
         //Requête SQL pour sélectionner tous les aéroports dans la base de données.
         public static void SelectAllPersonne(ObservableCollection<PersonneModel> ObsColPersonne)
         {
-            connection.Close();
             connection.Open();
             string query = "SELECT personne.id,personne.nom,personne.prenom,personne.date_naissance FROM personne Group BY personne.id";
             MySqlCommand cmd = new MySqlCommand(query, connection);
@@ -31,7 +30,9 @@ namespace ProjetWorkshop.Queries
 
         public static DataTable SelectAllPersonne()
         {
-            string requete = "SELECT personne.id , personne.nom FROM personne Group BY personne.id;";
+            HelperConfig config = new HelperConfig();
+            
+            string requete = "SELECT personne.id, personne.nom FROM personne Group BY personne.id";
 
             return HelperDb.GetDatatable(connection, requete);
         }
@@ -46,6 +47,16 @@ namespace ProjetWorkshop.Queries
             cmd.ExecuteNonQuery();
             connection.Close();
         }
+
+        public static void UpdatePersonne(string requete)
+        {
+            connection.Open();
+            MySqlCommand cmd = new MySqlCommand(requete, connection);
+            //MySqlDataAdapter sqlDataAdap = new MySqlDataAdapter(cmd);
+            cmd.ExecuteNonQuery();
+            connection.Close();
+        }
+
 
         //Requête SQL pour insérer une nouvelle personne dans la base de données.
         public static void InsertPersonne(string nom, string prenom, DateTime dateNaissance )

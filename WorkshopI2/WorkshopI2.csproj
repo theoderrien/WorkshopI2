@@ -106,6 +106,8 @@
     </ApplicationDefinition>
     <Compile Include="BDD_connexion.cs" />
     <Compile Include="Command\RelayCommand.cs" />
+    <Compile Include="Globals.cs" />
+    <Compile Include="Queries\ChiffrementDAL.cs" />
     <Compile Include="SDK\HelperConfig.cs" />
     <Compile Include="Models\PersonneModel.cs" />
     <Compile Include="Models\VoitureModel.cs" />

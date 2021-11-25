@@ -2,8 +2,7 @@
 	{
 		"table": "personne",
 		"Colonnes": [
-			{ "Nom": "nom" },
-			{ "Nom": "prenom" }
+			{ "Nom": "nom" }
 		]
 	},
 	{
